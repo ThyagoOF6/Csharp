@@ -1,0 +1,77 @@
+using System;
+
+namespace Atleta {
+    class Program {
+        static void Main(string[] args) {
+
+            // Declaração de variáveis
+            int numero_de_atletas;
+            string nomeMaisAlto = "";
+            double pMedio = 0, altMulher = 0, maisAlto = 0, homem = 0, contMulher = 0, mediaMulher = 0, pHomem = 0;
+
+            // Entrada de dados
+            Console.WriteLine("Qual a quantidade de atletas?");
+            numero_de_atletas = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 1; i <= numero_de_atletas; i++) {
+
+                Console.WriteLine("Digite os dados do atleta numero " + i + ":");
+                Console.WriteLine("Nome:");
+                string nome = Console.ReadLine();
+
+                Console.WriteLine("Sexo (F/M): ");
+                char sexo = Convert.ToChar(Console.ReadLine());
+                while (sexo != 'F' && sexo != 'M') {
+                    Console.WriteLine("Valor inválido! Favor digitar F ou M: ");
+                    sexo = Convert.ToChar(Console.ReadLine());
+                }
+
+                Console.WriteLine("Altura: ");
+                double altura = Convert.ToDouble(Console.ReadLine());
+                while (altura <= 0) {
+                    Console.WriteLine("Valor inválido! Favor digitar um valor positivo: ");
+                    altura = Convert.ToDouble(Console.ReadLine());
+                }
+
+                if (altura > maisAlto) {
+                    maisAlto = altura;
+                    nomeMaisAlto = nome;
+                }
+
+                Console.WriteLine("Peso: ");
+                double peso = Convert.ToDouble(Console.ReadLine());
+                while (peso <= 0) {
+                    Console.WriteLine("Valor inválido! Favor digitar um valor positivo: ");
+                    peso = Convert.ToDouble(Console.ReadLine());
+                }
+
+                pMedio += peso / numero_de_atletas;
+
+                if (sexo == 'M') {
+                    homem++;
+                }
+                else {
+                    contMulher++;
+                    altMulher += altura;
+                    mediaMulher = altMulher / contMulher;
+                }
+
+                pHomem = (homem / numero_de_atletas) * 100;
+
+            }
+
+            Console.WriteLine("Relatório: ");
+            Console.WriteLine("Peso médio dos atletas: " + pMedio.ToString("0.00"));
+            Console.WriteLine("Atleta mais alto: " + nomeMaisAlto);
+            Console.WriteLine("Porcentagem de homens: " + pHomem.ToString("0.0") + "%");
+
+            if (mediaMulher == 0) {
+                Console.WriteLine("Não há mulheres cadastradas");
+            }
+            else {
+                Console.WriteLine("Altura média das mulheres: " + mediaMulher.ToString("0.00"));
+            }
+
+        }
+    }
+}

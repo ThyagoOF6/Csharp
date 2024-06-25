@@ -1,0 +1,4 @@
+c:\Users\thyag\OneDrive\Desktop\Nelio\C#\timespan\obj\Debug\net8.0\C#.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\thyag\OneDrive\Desktop\Nelio\C#\timespan\obj\Debug\net8.0\C#.AssemblyInfoInputs.cache
+c:\Users\thyag\OneDrive\Desktop\Nelio\C#\timespan\obj\Debug\net8.0\C#.AssemblyInfo.cs
+c:\Users\thyag\OneDrive\Desktop\Nelio\C#\timespan\obj\Debug\net8.0\C#.csproj.CoreCompileInputs.cache
